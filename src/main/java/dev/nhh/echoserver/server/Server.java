@@ -24,7 +24,6 @@ public class Server implements Runnable {
         while (running) {
 
             final byte[] buffer = new byte[1024];
-
             final var request = new DatagramPacket(buffer, buffer.length);
 
             try {
