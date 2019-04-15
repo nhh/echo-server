@@ -2,18 +2,16 @@ package dev.nhh.echoserver.server;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementWrapper;
-import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import java.util.Set;
 import java.util.UUID;
 
-@XmlType( propOrder = { "id", "name", "channels"} )
-@XmlRootElement( name = "Server" )
-public class Server {
+@XmlType( propOrder = { "id", "name", "users"} )
+public class Channel {
 
     private UUID id = UUID.randomUUID();
     private String name;
-    private Set<Channel> channels;
+    private Set<String> users;
 
     @XmlElement(name = "id")
     public UUID getId() {
@@ -24,14 +22,14 @@ public class Server {
         this.id = id;
     }
 
-    @XmlElement(name = "channel", type = Channel.class)
-    @XmlElementWrapper(name="channels")
-    public Set<Channel> getChannels() {
-        return channels;
+    @XmlElementWrapper(name="users")
+    @XmlElement(name = "user")
+    public Set<String> getUsers() {
+        return users;
     }
 
-    public void setChannels(Set<Channel> channels) {
-        this.channels = channels;
+    public void setUsers(Set<String> users) {
+        this.users = users;
     }
 
     @XmlElement(name = "name")

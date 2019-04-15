@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Server>
+    <id>a615d804-fb9a-4bd8-9b81-49cf25d73e84</id>
+    <name>German Rush Company</name>
+    <channels>
+        <channel>
+            <id>3823b7ff-5608-4488-813e-26ab888abc53</id>
+            <name>Laberecke #1</name>
+            <users>
+                <user>Augusto</user>
+                <user>Niklas</user>
+            </users>
+        </channel>
+        <channel>
+            <id>49d65b4c-1232-4ff2-8f27-16fc4518672f</id>
+            <name>Eingangshalle</name>
+            <users>
+                <user>Augusto</user>
+                <user>Niklas</user>
+            </users>
+        </channel>
+    </channels>
+</Server>
