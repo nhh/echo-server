@@ -5,7 +5,7 @@ import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.SocketException;
 
-public class Server implements Runnable {
+public class UdpServer implements Runnable {
 
     private DatagramSocket socket;
     private boolean running;
