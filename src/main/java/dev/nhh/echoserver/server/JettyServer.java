@@ -1,6 +1,5 @@
 package dev.nhh.echoserver.server;
 
-import org.eclipse.jetty.server.Connector;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.ServerConnector;
 import org.eclipse.jetty.servlet.ServletContextHandler;
@@ -30,7 +29,8 @@ public class JettyServer {
             ServerContainer wscontainer = WebSocketServerContainerInitializer.configureContext(context);
 
             // Add WebSocket endpoint to javax.websocket layer
-            wscontainer.addEndpoint(EventSocket.class);
+            wscontainer.addEndpoint(ChannelEventHandler.class);
+            wscontainer.addEndpoint(LogEventHandler.class);
 
             server.start();
             server.join();
