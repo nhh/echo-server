@@ -23,13 +23,14 @@ public class Server implements Runnable {
 
         while (running) {
 
-            final byte[] buffer = new byte[1024];
+            final byte[] buffer = new byte[128];
 
             final var request = new DatagramPacket(buffer, buffer.length);
 
             try {
                 socket.receive(request);
-                final var response = new DatagramPacket(request.getData(), request.getLength(), request.getAddress(), request.getPort());
+                // Todo Is it better to have multiple
+                final var response = new DatagramPacket(request.getData(), request.getLength(), request.getAddress(), 44455);
                 socket.send(response);
             } catch(IOException e) {
                 e.printStackTrace();
